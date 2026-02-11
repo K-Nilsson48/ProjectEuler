@@ -11,16 +11,16 @@
  int main(){
     long long lpf = 1;
     long long num = 600851475143;
-    long long i = 2;
 
-    while (i <= num){
-        if (num % i == 0 && eulerprimes::isprime(i)){
+    for (long long i = 2; i*i <= num;i++){
+        while (num % i == 0){
             lpf = i;
-            num = num/i;
+            num /= i;
         }
-        else{
-            i++;
-        }
+    }
+
+    if (num > 1){
+        lpf = num;
     }
 
     std::cout << "The largest prime factor is: " << lpf << std::endl;
