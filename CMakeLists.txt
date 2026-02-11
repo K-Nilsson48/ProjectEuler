@@ -16,4 +16,6 @@ function(add_euler_problem PROBLEM_NAME FILE_PATH)
     target_link_libraries(${PROBLEM_NAME} eulerlib)
 endfunction()
 
-add_euler_problem(p001_multiples problems/p001_multiples3_5.cpp)
+add_euler_problem(p001_multiples3_5 problems/p001_multiples3_5.cpp)
+add_euler_problem(p002_even_fib problems/p002_even_fib.cpp)
+add_euler_problem(p003_largest_prime_factor problems/p003_largest_prime_factor.cpp)
