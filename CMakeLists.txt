@@ -1,0 +1,19 @@
+cmake_minimum_required(VERSION 3.10.0)
+project(ProjectEuler VERSION 0.2.0)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+
+include_directories(include)
+
+file(GLOB LIB_SOURCES "src/*.cpp")
+add_library(eulerlib STATIC ${LIB_SOURCES})
+
+
+function(add_euler_problem PROBLEM_NAME FILE_PATH)
+    add_executable(${PROBLEM_NAME} ${FILE_PATH})
+    target_link_libraries(${PROBLEM_NAME} eulerlib)
+endfunction()
+
+add_euler_problem(p001_multiples problems/p001_multiples3_5.cpp)

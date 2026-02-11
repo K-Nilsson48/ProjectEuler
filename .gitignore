@@ -1,0 +1,15 @@
+# Build artifacts
+build/
+bin/
+*.o
+*.obj
+*.exe
+
+# IDE specific
+.vscode/
+.idea/
+.DS_Store
+
+# CMake logs
+CMakeCache.txt
+CMakeFiles/
