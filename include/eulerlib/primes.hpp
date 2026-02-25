@@ -3,9 +3,12 @@
 
 #include <vector>
 
-namespace eulerprimes{
+namespace eulerlib{
 
     //Declaration of prime number function
     bool isprime(int n);
+
+    //Declaration of Prime Factors Function
+    std::vector<int> prime_factors(int n);
 }
 #endif
