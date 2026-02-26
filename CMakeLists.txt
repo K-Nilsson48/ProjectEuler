@@ -23,6 +23,9 @@ add_euler_problem(p004_largest_palindrome problems/p004_largest_palindrome.cpp)
 add_euler_problem(p005_smallest_multiple problems/p005_smallest_multiple.cpp)
 add_euler_problem(p006_sum_square_difference problems/p006_sum_square_difference.cpp)
 add_euler_problem(p007_10001_prime problems/p007_10001_prime.cpp)
+add_euler_problem(p008_largest_prod_in_series problems/p008_largest_prod_in_series.cpp)
+add_euler_problem(p009_special_triplet problems/p009_special_triplet.cpp)
+add_euler_problem(p010_sum_of_primes problems/p010_sum_of_primes.cpp)
 
 
 # Compile your math functions into a library called 'euler_core'
