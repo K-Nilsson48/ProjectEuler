@@ -21,6 +21,7 @@ add_euler_problem(p002_even_fib problems/p002_even_fib.cpp)
 add_euler_problem(p003_largest_prime_factor problems/p003_largest_prime_factor.cpp)
 add_euler_problem(p004_largest_palindrome problems/p004_largest_palindrome.cpp)
 add_euler_problem(p005_smallest_multiple problems/p005_smallest_multiple.cpp)
+add_euler_problem(p006_sum_square_difference problems/p006_sum_square_difference.cpp)
 
 
 # Compile your math functions into a library called 'euler_core'
