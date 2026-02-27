@@ -6,9 +6,12 @@
 namespace eulerlib{
 
     //Declaration of prime number function
-    bool isprime(int n);
+    bool isprime(long long n);
 
     //Declaration of Prime Factors Function
-    std::vector<int> prime_factors(int n);
+    std::vector<long long> prime_factors(long long n);
+
+    //Declaration of Sieve of Eratosthenes
+    std::vector<long long> generate_primes(long long n);
 }
 #endif

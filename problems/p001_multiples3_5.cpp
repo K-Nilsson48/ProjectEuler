@@ -9,12 +9,15 @@
 
 
 int main() {
-    const int limit = 999;
+    //Limit given in the question
+    constexpr int limit = 999;
     
+    //Find the sum of multiples for 3, 5 and 15
     long long sum3 = eulerlib::sum_of_multiples(3, limit);
     long long sum5 = eulerlib::sum_of_multiples(5, limit);
     long long sum15 = eulerlib::sum_of_multiples(15, limit);
 
+    // Return the sum of multiples of 3 and 5 minus the ones double counted as 15
     long long total_sum = sum3 + sum5 - sum15;
 
     std::cout << "The sum of multiples of 3 or 5 below 1000 is: " << total_sum << std::endl;

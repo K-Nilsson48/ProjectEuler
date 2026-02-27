@@ -1,8 +1,6 @@
 #ifndef EULERLIB_MATH_UTILS_HPP
 #define EULERLIB_MATH_UTILS_HPP
 
-#include <vector>
-
 namespace eulerlib {
 
     // Declaration of function to calculate the sum of all multiples of A under a given limit

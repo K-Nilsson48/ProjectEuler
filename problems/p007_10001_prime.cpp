@@ -7,17 +7,19 @@
  */
 
 int main(){
-    int count = 0;
-    int num = 1;
+    //Define Constants
+    int count = 1;
+    long long num = 1;
 
-    while (count != 10001){
-        num++;
+    //Loop over all values checking for primes
+    while (count != 10'001){
+        num += 2;
         if (eulerlib::isprime(num)){
             count++;
         }
 
     }
 
-    std::cout << num << std::endl;
-
+    std::cout << "The 10,001st prime is: " << num << std::endl;
+    return 0;
 }

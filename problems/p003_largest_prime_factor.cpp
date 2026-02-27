@@ -1,4 +1,3 @@
-#include "eulerlib/primes.hpp"
 #include <iostream>
 
 /**
@@ -9,9 +8,11 @@
 
 
  int main(){
+    //Define starting numbers from problem
     long long lpf = 1;
-    long long num = 600851475143;
+    long long num = 600'851'475'143;
 
+    //Get the largest prime factor
     for (long long i = 2; i*i <= num;i++){
         while (num % i == 0){
             lpf = i;
@@ -25,5 +26,5 @@
 
     std::cout << "The largest prime factor is: " << lpf << std::endl;
 
-
+    return 0;
  }

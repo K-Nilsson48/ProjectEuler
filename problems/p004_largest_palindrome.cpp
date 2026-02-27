@@ -1,6 +1,4 @@
 #include <iostream>
-#include <string>
-using namespace std;
 
 /**
  * Problem 4:
@@ -9,30 +7,34 @@ using namespace std;
  */
 
 
+ //Helper function to test if a string is a palindrome
 bool ispalindrome(int n){
-    string str_n = to_string(n);
-    int len_n = str_n.length();
 
-    for (int i = 0; i < len_n/2; i++){
-        char fist_num = str_n[i];
-        char second_num = str_n[len_n - i-1];
-        if (str_n[i] != str_n[len_n-i-1]){
-            return false;
-        }
+    int orig = n;
+    int reversed = 0;
+
+    //Reverse the integer
+    while (n > 0){
+        reversed = (reversed * 10) + (n % 10);
+        n /= 10;
     }
-    return true;
+
+    return orig == reversed;
 
 }
 
 
 int main(){
-    
-    long long limit = 999*999;
+    //Define Constants
     long long largest = 0;
 
-    for (int x1 = 100; x1 < 1000; x1++){
-        for (int x2 = 100; x2 < 1000; x2++){
-            if (x1*x2 > largest && ispalindrome(x1*x2)){
+    //Loop over all possible options checking
+    for (int x1 = 999; x1 >= 100; x1--){
+        for (int x2 = x1; x2 >= 100; x2--){
+
+            if (x1 * x2 <= largest) break;
+
+            if (ispalindrome(x1*x2)){
                 largest = x1*x2;
             }
         }
@@ -40,4 +42,5 @@ int main(){
 
     std::cout << "The largest palindrome is: " << largest << std::endl;
 
+    return 0;
 }

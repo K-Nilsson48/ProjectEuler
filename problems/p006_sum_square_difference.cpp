@@ -1,8 +1,4 @@
 #include <iostream>
-#include <vector>
-#include <numeric>
-#include <cmath>
-
 
 /**
  * The sum of the squares of the first ten natural numbers is,
@@ -16,26 +12,15 @@ Find the difference between the sum of the squares of the first one hundred natu
 
 int main(){
 
-    /** Naive Way
-    std::vector<int> numbers(100);
+    //Define constants
+    constexpr long long num = 100;
 
-    std::iota(numbers.begin(), numbers.end(), 1);
-
-    long long sum_of_squares = 0;
-    long long sums = 0;
-
-    for (int i : numbers){
-        sums += i;
-        sum_of_squares += i*i;
-    }
-    std::cout << sums * sums - sum_of_squares << std::endl;
-    */
-
-    //Faster Way
-    long long num = 100;
-
+    //Calculate the sum of squares and the square of sums
     long long sum_of_squares = num * (num + 1) * (2*num + 1) / 6;
-    long long square_of_sum = std::pow(num * (num + 1) / 2,2);
+    long long base_sum = num * (num + 1) / 2;
+    long long square_of_sum = base_sum * base_sum;
 
-    std::cout << square_of_sum - sum_of_squares << std::endl;
+    std::cout << "The square of sums minus the sum of squares is: " << square_of_sum - sum_of_squares << std::endl;
+
+    return 0;
 }

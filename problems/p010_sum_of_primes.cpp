@@ -1,15 +1,18 @@
 #include <iostream>
 #include "eulerlib/primes.hpp"
+#include <vector>
+#include <numeric>
 
 int main(){
-    int limit = 2000000;
-    long long sum = 0;
+    //Define Constants
+    int limit = 2'000'000;
 
-    for (int i = 2; i < limit; i++){
-        if (eulerlib::isprime(i)){
-            sum += i;
-        }
-    }
+    //Add up all numbers that are prime
+    std::vector<long long> primes = eulerlib::generate_primes(limit);
 
-    std::cout << sum << std::endl;
+    long long sum = std::accumulate(primes.begin(), primes.end(),0LL);
+
+    std::cout << "The sum of primes up to 2,000,000 is: " << sum << std::endl;
+
+    return 0;
 }

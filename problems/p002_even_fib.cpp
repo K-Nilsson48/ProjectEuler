@@ -9,12 +9,14 @@
  */
 
  int main(){
-    const int limit = 4000000 - 1;
+    //Define limit from problem and starting constraints
+    const int limit = 4'000'000;
     long long sum = 2;
     long long fib1 = 2;
     long long fib2 = 8;
 
-    while (fib2 < limit){
+    //Perform even fibonacci loop
+    while (fib2 <= limit){
 
         sum += fib2;
 
@@ -24,4 +26,6 @@
     }
 
     std::cout << "The sum of even Fibonacci numbers below 4 million is: " << sum << std::endl;
+
+    return 0;
  }

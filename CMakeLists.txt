@@ -1,14 +1,17 @@
 cmake_minimum_required(VERSION 3.10.0)
 project(ProjectEuler VERSION 0.2.0)
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 
 include_directories(include)
 
 file(GLOB LIB_SOURCES "src/*.cpp")
 add_library(eulerlib STATIC ${LIB_SOURCES})
+
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/problems/data
+     DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 
 function(add_euler_problem PROBLEM_NAME FILE_PATH)
@@ -26,6 +29,7 @@ add_euler_problem(p007_10001_prime problems/p007_10001_prime.cpp)
 add_euler_problem(p008_largest_prod_in_series problems/p008_largest_prod_in_series.cpp)
 add_euler_problem(p009_special_triplet problems/p009_special_triplet.cpp)
 add_euler_problem(p010_sum_of_primes problems/p010_sum_of_primes.cpp)
+add_euler_problem(p011_grid_product problems/p011_grid_product.cpp)
 
 
 # Compile your math functions into a library called 'euler_core'
