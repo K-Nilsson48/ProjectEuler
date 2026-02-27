@@ -51,7 +51,8 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 # 2. Create the test executable
-add_executable(euler_tests tests/test_primes.cpp)
+add_executable(euler_tests tests/test_primes.cpp tests/test_math_utils.cpp)
+
 
 # 3. Link your shared library AND GTest
 # (Assuming your shared library is named 'euler_core' as we set up earlier)
