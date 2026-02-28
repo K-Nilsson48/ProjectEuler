@@ -30,6 +30,9 @@ add_euler_problem(p008_largest_prod_in_series problems/p008_largest_prod_in_seri
 add_euler_problem(p009_special_triplet problems/p009_special_triplet.cpp)
 add_euler_problem(p010_sum_of_primes problems/p010_sum_of_primes.cpp)
 add_euler_problem(p011_grid_product problems/p011_grid_product.cpp)
+add_euler_problem(p012_divisible_triangle problems/p012_divisible_triangle.cpp)
+add_euler_problem(p013_large_sum problems/p013_large_sum.cpp)
+add_euler_problem(p014_longest_collatz problems/p014_longest_collatz.cpp)
 
 
 # Compile your math functions into a library called 'euler_core'

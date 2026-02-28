@@ -1,5 +1,14 @@
 #include <iostream>
 
+/**
+ * A Pythagorean triplet is a set of three natural numbers,   , for which,
+
+For example,      .
+
+There exists exactly one Pythagorean triplet for which    .
+Find the product .
+ */
+
 int main(){
     int target = 1000;
     int half_target = target / 2;
