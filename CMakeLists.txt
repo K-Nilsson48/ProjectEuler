@@ -33,6 +33,9 @@ add_euler_problem(p011_grid_product problems/p011_grid_product.cpp)
 add_euler_problem(p012_divisible_triangle problems/p012_divisible_triangle.cpp)
 add_euler_problem(p013_large_sum problems/p013_large_sum.cpp)
 add_euler_problem(p014_longest_collatz problems/p014_longest_collatz.cpp)
+add_euler_problem(p015_lattice_paths problems/p015_lattice_paths.cpp)
+add_euler_problem(p016_power_digit_sum problems/p016_power_digit_sum.cpp)
+add_euler_problem(p017_number_letter_counts problems/p017_number_letter_counts.cpp)
 
 
 # Compile your math functions into a library called 'euler_core'
