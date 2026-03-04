@@ -44,11 +44,10 @@ int main(){
     }
 
     //Shorten to 10 digits
-    int num_digits = static_cast<int>(std::floor(std::log10(std::abs(static_cast<double>(total)))) + 1);
+    long long scale = 10'000'000'000LL;
     
-    while (num_digits > 10){
+    while (total >= scale){
         total /= 10;
-        num_digits--;
     }
 
 

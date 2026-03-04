@@ -1,27 +1,28 @@
 #include <iostream>
 #include <vector>
+#include <chrono> //Used for comparing approaches
 
 int main(){
+    auto start = std::chrono::high_resolution_clock::now();
+
     std::vector<int> num = {1};
     int exponent = 1000;
 
     for (int i = 1; i <= exponent; i++){
+        int carry = 0;
+
         //multiple each digit by 2
         for (int digit = 0; digit < num.size(); digit++){
-            num[digit] *= 2;
+            int prod = num[digit] * 2 + carry;
+
+            num[digit] = prod % 10;
+
+            carry = prod / 10;
+
         }
 
-        //Check to see which numbers are more than one digit
-        for (int digit = 0; digit < num.size(); digit++){
-            if (num[digit] >= 10){
-                num[digit] = num[digit] % 10;
-                if (digit + 1 < num.size()){
-                    num[digit + 1]++;
-                }else{
-                    num.push_back(1);
-                }
-                
-            }
+        if (carry != 0){
+            num.push_back(carry);
         }
     }
 
@@ -31,8 +32,11 @@ int main(){
         total += digit;
     }
 
+    auto end = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end-start);
 
     std::cout << "The sum of all digits is: " << total << std::endl;
+    std::cout << "The amount of time was: " << duration << std::endl;
 
     return 0;
 }

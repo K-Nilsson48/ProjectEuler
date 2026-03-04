@@ -16,7 +16,7 @@ namespace eulerlib {
 
         std::vector<long long> divs;
 
-        for (int i = 1; i*i <= n; i++){
+        for (long long i = 1; i*i <= n; i++){
             if (n % i == 0){
                 divs.push_back(i);
                 if (n/i != i) divs.push_back(n/i);
@@ -24,5 +24,20 @@ namespace eulerlib {
         }
         std::sort(divs.begin(), divs.end());
         return divs;
+    }
+
+    //Implmentation of the divisor count function
+    int count_divisors(long long n){
+        if (n <= 0) return 0;
+
+        int count = 0;
+
+        for (long long i = 1; i*i <= n; i++){
+            if (n % i == 0){
+                count++;
+                if (i*i != n) count++;
+            }
+        }
+        return count;
     }
 }

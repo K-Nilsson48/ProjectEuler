@@ -31,7 +31,7 @@ int main(){
     std::array<int,4> best_nums; 
     //Horizontal
     for (int row = 0; row < 20; row++){
-        for (int col = 0; col < 20 - window; col++){
+        for (int col = 0; col <= 20 - window; col++){
             long long current_prod = 1;
             for (int w = 0; w < window; w++){
                 current_prod *= grid[row][col+w];

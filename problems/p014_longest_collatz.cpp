@@ -1,13 +1,14 @@
 #include <iostream>
 #include <vector>
+#include <chrono> //Used for comparing approaches
 
 /**
  * Which starting number, under one million, produces the longest chain?
  */
 
 long long collatz_next(long long num){
-    if (num % 2 == 0){
-        num /= 2;
+    if ((num & 1) == 0){
+        num >>= 1;
     }else{
         num = 3 * num + 1;
     }
@@ -16,6 +17,8 @@ long long collatz_next(long long num){
 }
 
 int main(){
+    auto start = std::chrono::high_resolution_clock::now();
+
     std::vector<int> dist(1'000'001,0);
     int longest_dist = 0;
     int longest_num = 0;
@@ -43,6 +46,12 @@ int main(){
         
     }
 
+    auto end = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end-start);
+
+
     std::cout << "The number under one million with the longest collatz path is: " << longest_num << std::endl;
+    std::cout << "The amount of time was: " << duration << std::endl;
+
     return 0;
 }

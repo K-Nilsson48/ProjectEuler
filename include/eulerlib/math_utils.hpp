@@ -9,5 +9,8 @@ namespace eulerlib {
 
     // Declaration of function to calculate all divisiors
     std::vector<long long> divisors(long long n);
+
+    //Declaration of a function to count the number of divisors for a number
+    int count_divisors(long long n);
 }
 #endif // EULERLIB_MATH_UTILS_HPP

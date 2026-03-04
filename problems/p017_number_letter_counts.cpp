@@ -1,11 +1,12 @@
 #include <iostream>
 #include <map>
+#include <chrono> //Used for comparing approaches
 
 
-int calc_length(int i, std::map<int, int> letters){
+int calc_length(int i, const std::map<int, int>& letters){
     int total = 0;
     if (letters.contains(i)){
-            return letters[i];
+            return letters.at(i);
         }
         //If not calculate the number
         else{
@@ -18,24 +19,27 @@ int calc_length(int i, std::map<int, int> letters){
                 }
 
                 if (i % 100 < 20){
-                    total += letters[hundred/100] + letters[i % 100] + letters[100];
+                    total += letters.at(hundred/100) + letters.at(i % 100) + letters.at(100);
                 }else{
                     int tens = (i - hundred) - i % 10;
-                    total += letters[hundred/100] + letters[tens] + letters[i % 10] + letters[100];
+                    total += letters.at(hundred/100) + letters.at(tens) + letters.at(i % 10) + letters.at(100);
                 }
             }else{
                 int tens = i - i % 10;
-                total += letters[tens] + letters[i%10];
+                total += letters.at(tens) + letters.at(i%10);
             }
         }
     return total;
 }
 
 int main(){
+    auto start = std::chrono::high_resolution_clock::now();
+
     int limit = 1000;
     std::map<int, int> letters;
 
     //Define the needed letter lenghts
+    letters[0] = 0;
     letters[1] = 3;
     letters[2] = 3;
     letters[3] = 5;
@@ -76,7 +80,12 @@ int main(){
         //std::cout << i << ":" << length << std::endl;
     }
 
+    auto end = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end-start);
+
     std::cout << "The number of letters in digits under 1000: " << total << std::endl;
+
+    std::cout << "The amount of time was: " << duration << std::endl;
 
     return 0;
 }
